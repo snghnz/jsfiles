@@ -1,0 +1,24 @@
+Next.js sablon:
+================
+npx create-next-app@latest
+
+Prettier és DaisyUI modulok telepítése a projekt könyvtárból kiadott:
+=====================================================================
+npm i -D prettier prettier-plugin-tailwindcss daisyui@latest
+
+app/global.css új tartalma:
+===========================
+@import "tailwindcss";
+@plugin "daisyui";
+
+opcionális - package.json prettier script-ek hozzáadása:
+==========================================================
+"scripts": {
+    …,
+    "format": "prettier --check --ignore-path .gitignore .",
+    "format:fix": "prettier --write --ignore-path .gitignore ."
+  },
+
+opcionális - Ha "npm i" hibát ír ki, akkor PowerShell rendszergazdaként indítva:
+=================================================================================
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
